@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip}
+body{margin:0;background:#0b0b0d;color:#f2f3f5;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#f2f3f5;text-decoration:none}
+a:hover{color:#c6ff00}
+*{box-sizing:border-box}
+::selection{background:#3d63ff;color:#fff}
+@keyframes km-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes km-rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes km-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes km-fade{from{opacity:0}to{opacity:1}}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(11,11,13,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(242,243,245,0.1)">
+  <div style="max-width:1320px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:12px">
+      <div style="width:38px;height:38px;border:1.5px dashed #3d63ff;display:grid;place-items:center;font-weight:900;font-stretch:125%;font-size:14px;letter-spacing:-0.02em">KM</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.3;letter-spacing:0.04em;text-transform:uppercase">Khader Mohideen<br><span style="color:#8d909b">Packaging &amp; Graphic Design</span></div>
+    </a>
+    <nav style="display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase">
+      <a href="#lab">Packaging</a>
+      <a href="#gifts">Gift sets</a>
+      <a href="#merch">Merch</a>
+      <a href="#print">Print</a>
+      <a href="#about">About</a>
+      <a href="#cv">CV</a>
+      <a href="#contact" style="background:#c6ff00;color:#0b0b0d;padding:10px 16px">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<section id="top" data-screen-label="Hero" style="position:relative;max-width:1320px;margin:0 auto;padding:56px 28px 40px">
+  <div style="position:absolute;left:12px;top:24px;width:22px;height:22px;border-left:1px solid #f2f3f5;border-top:1px solid #f2f3f5"></div>
+  <div style="position:absolute;right:12px;top:24px;width:22px;height:22px;border-right:1px solid #f2f3f5;border-top:1px solid #f2f3f5"></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:40px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;animation:km-rise 0.9s cubic-bezier(.2,.7,.2,1) both">
+        <span style="width:8px;height:8px;background:#3d63ff;border-radius:50%"></span>
+        Senior Graphic Designer · Dubai, UAE · 10+ years
+      </div>
+      <h1 style="margin:0;font-size:clamp(56px,8.4vw,128px);line-height:0.86;font-weight:900;font-stretch:125%;letter-spacing:-0.035em;text-transform:uppercase">
+        <span style="display:block;animation:km-rise 1s 0.1s cubic-bezier(.2,.7,.2,1) both">Khader</span>
+        <span style="display:block;animation:km-rise 1s 0.2s cubic-bezier(.2,.7,.2,1) both;-webkit-text-stroke:2px #c6ff00;color:transparent">Mohideen</span>
+      </h1>
+      <div style="height:1px;background:repeating-linear-gradient(90deg,#c6ff00 0 10px,transparent 10px 16px);transform-origin:left;animation:km-draw 1.2s 0.5s cubic-bezier(.2,.7,.2,1) both"></div>
+      <p style="margin:0;max-width:520px;font-size:clamp(18px,1.6vw,22px);line-height:1.45;font-stretch:95%;text-wrap:pretty;animation:km-rise 1s 0.35s cubic-bezier(.2,.7,.2,1) both">Packaging, presentation boxes, branded merchandise and print — designed flat, built to fold. Work for Mashreq, Etihad Airways, du, TikTok and Al Hafa.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;animation:km-rise 1s 0.45s cubic-bezier(.2,.7,.2,1) both">
+        <a href="#lab" style="background:#3d63ff;color:#fff;padding:16px 24px;font-weight:700;font-size:15px;letter-spacing:0.02em;transition:transform .25s" style-hover="transform:translateY(-3px);color:#fff">Unfold the work →</a>
+        <a href="#contact" style="border:1.5px solid #f2f3f5;padding:16px 24px;font-weight:700;font-size:15px;letter-spacing:0.02em;transition:all .25s" style-hover="background:#c6ff00;color:#0b0b0d;border-color:#c6ff00">Get in touch</a>
+      </div>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:column;gap:14px;animation:km-fade 1.2s 0.2s both">
+      <div ref="{{ heroRef }}" style="position:relative;height:clamp(380px,46vw,560px);perspective:1600px;cursor:grab;touch-action:pan-y;background-image:linear-gradient(rgba(242,243,245,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(242,243,245,0.06) 1px,transparent 1px);background-size:32px 32px;border:1px solid rgba(242,243,245,0.12)"></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#a3a6b0">
+        <span>{{ heroSpec.name }} — {{ heroSpec.client }}</span>
+        <span>{{ heroSpec.dims }}</span>
+        <span>Drag to rotate</span>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:44px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+    <div style="display:flex">
+      <div style="width:22px;height:14px;background:#00a0e3"></div>
+      <div style="width:22px;height:14px;background:#e5007e"></div>
+      <div style="width:22px;height:14px;background:#ffe500"></div>
+      <div style="width:22px;height:14px;background:#f2f3f5"></div>
+      <div style="width:22px;height:14px;background:#6c675e"></div>
+      <div style="width:22px;height:14px;background:#a8a297"></div>
+      <div style="width:22px;height:14px;background:#d8d2c6"></div>
+    </div>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#8d909b;text-transform:uppercase">C · M · Y · K — print-ready since 2010</span>
+  </div>
+</section>
+
+<div style="background:#c6ff00;border-top:1px solid #a8d900;border-bottom:1px solid #a8d900;overflow:hidden;transform:rotate(-1.2deg);margin:20px -20px 0;box-shadow:0 6px 20px rgba(0,0,0,0.12)">
+  <div style="display:flex;width:max-content;animation:km-marquee 38s linear infinite;padding:16px 0">
+    <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="16">
+      <div style="display:flex;align-items:center;gap:28px;padding-right:28px;font-weight:800;font-stretch:125%;font-size:22px;text-transform:uppercase;letter-spacing:-0.01em;color:#0b0b0d;white-space:nowrap">{{ m }}<span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0b0b0d">✕</span></div>
+    </sc-for>
+  </div>
+</div>
+
+<section id="lab" data-screen-label="Packaging Lab" style="background:#1236ff;color:#ffffff;margin-top:70px;padding:96px 28px;background-image:linear-gradient(rgba(255,255,255,0.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.09) 1px,transparent 1px);background-size:40px 40px">
+  <div style="max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <div data-reveal="1" style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#c6ff00;text-transform:uppercase">01 / Packaging lab</div>
+        <h2 style="margin:0;font-size:clamp(40px,5.6vw,84px);line-height:0.9;font-weight:900;font-stretch:125%;letter-spacing:-0.03em;text-transform:uppercase">From dieline<br>to box.</h2>
+      </div>
+      <p style="margin:0;max-width:420px;font-size:17px;line-height:1.55;color:#dfe4ff;text-wrap:pretty">Each carton below is built from the original print artwork. Watch the flat dieline fold into the finished pack — then drag it around to inspect every panel.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:28px;align-items:stretch">
+      <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:2px">
+        <sc-for list="{{ labItems }}" as="b" hint-placeholder-count="5">
+          <button onClick="{{ b.select }}" style="all:unset;cursor:pointer;display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:20px 18px;background:{{ b.bg }};color:{{ b.fg }};border-left:3px solid {{ b.bar }};transition:background .3s,color .3s">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;opacity:0.7">{{ b.num }}</span>
+            <span style="display:flex;flex-direction:column;gap:4px">
+              <span style="font-weight:800;font-stretch:120%;font-size:20px;text-transform:uppercase;letter-spacing:-0.01em">{{ b.name }}</span>
+              <span style="font-size:13px;opacity:0.75">{{ b.type }} · {{ b.client }}</span>
+            </span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;opacity:0.7;text-align:right">{{ b.dims }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="flex:2 1 520px;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <div ref="{{ labRef }}" style="position:relative;height:clamp(420px,48vw,600px);perspective:1700px;cursor:grab;touch-action:pan-y;border:1px solid rgba(255,255,255,0.14);background:radial-gradient(ellipse at 50% 40%,rgba(198,255,0,0.12),transparent 65%)"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button onClick="{{ toggleFold }}" style="all:unset;cursor:pointer;background:#c6ff00;color:#0b0b0d;padding:13px 20px;font-weight:700;font-size:14px;transition:transform .2s" style-hover="transform:translateY(-2px)">{{ foldLabel }}</button>
+            <button onClick="{{ openDieline }}" style="all:unset;cursor:pointer;border:1px solid rgba(255,255,255,0.4);padding:12px 20px;font-weight:600;font-size:14px;transition:background .2s" style-hover="background:rgba(255,255,255,0.1)">View original dieline ↗</button>
+          </div>
+          <div style="display:flex;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#c9d1ff;flex-wrap:wrap">
+            <span style="display:flex;align-items:center;gap:8px"><span style="width:22px;border-top:1.5px dashed #c6ff00"></span>Cut / fold</span>
+            <span>Drag to rotate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gifts" data-screen-label="Gift Sets" style="max-width:1320px;margin:0 auto;padding:110px 28px 40px;display:flex;flex-direction:column;gap:44px">
+  <div data-reveal="1" style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#3d63ff;text-transform:uppercase">02 / Presentation boxes</div>
+      <h2 style="margin:0;font-size:clamp(40px,5.6vw,84px);line-height:0.9;font-weight:900;font-stretch:125%;letter-spacing:-0.03em;text-transform:uppercase">The unboxing<br>moment.</h2>
+    </div>
+    <p style="margin:0;max-width:420px;font-size:17px;line-height:1.55;color:#a3a6b0;text-wrap:pretty">Corporate gift sets — rigid boxes, mailers and fitted inserts — designed around the brand and the product that sits inside.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px">
+    <sc-for list="{{ gifts }}" as="g" hint-placeholder-count="5">
+      <figure data-reveal="1" onClick="{{ g.open }}" style="margin:0;cursor:zoom-in;background:#16171a;border:1px solid rgba(242,243,245,0.08);display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s" style-hover="transform:translateY(-8px) rotate(-0.4deg);box-shadow:0 30px 50px -20px rgba(60,40,20,0.3)">
+        <div style="aspect-ratio:4/3;padding:18px;background:#fff;display:grid;place-items:center;overflow:hidden">
+          <img src="{{ g.src }}" alt="{{ g.title }}" style="max-width:100%;max-height:100%;object-fit:contain;display:block">
+        </div>
+        <figcaption style="border-top:1px dashed rgba(242,243,245,0.2);padding:14px 18px;display:flex;justify-content:space-between;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase">
+          <span style="font-weight:500">{{ g.title }}</span>
+          <span style="color:#8d909b">{{ g.tag }}</span>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<section id="merch" data-screen-label="Merchandise" style="padding:80px 0 40px;display:flex;flex-direction:column;gap:40px">
+  <div data-reveal="1" style="max-width:1320px;width:100%;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#3d63ff;text-transform:uppercase">03 / Branded merchandise</div>
+      <h2 style="margin:0;font-size:clamp(40px,5.6vw,84px);line-height:0.9;font-weight:900;font-stretch:125%;letter-spacing:-0.03em;text-transform:uppercase">Brand, applied.</h2>
+    </div>
+    <p style="margin:0;max-width:420px;font-size:17px;line-height:1.55;color:#a3a6b0;text-wrap:pretty">Mock-ups that sell the idea before production: apparel, travel kits, drinkware and stationery. Scroll sideways →</p>
+  </div>
+  <div style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 28px 30px;scrollbar-width:thin">
+    <sc-for list="{{ merch }}" as="m" hint-placeholder-count="5">
+      <figure onClick="{{ m.open }}" style="margin:0;flex:none;width:clamp(280px,30vw,400px);scroll-snap-align:start;cursor:zoom-in;display:flex;flex-direction:column;gap:12px">
+        <div style="aspect-ratio:1;background:#fff;border:1px solid rgba(242,243,245,0.08);display:grid;place-items:center;padding:22px;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.02)">
+          <img src="{{ m.src }}" alt="{{ m.title }}" style="max-width:100%;max-height:100%;object-fit:contain;display:block">
+        </div>
+        <figcaption style="display:flex;justify-content:space-between;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase">
+          <span>{{ m.title }}</span><span style="color:#8d909b">{{ m.tag }}</span>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<section id="print" data-screen-label="Print & Campaigns" style="max-width:1320px;margin:0 auto;padding:80px 28px 110px;display:flex;flex-direction:column;gap:44px">
+  <div data-reveal="1" style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#3d63ff;text-transform:uppercase">04 / Print &amp; campaigns</div>
+      <h2 style="margin:0;font-size:clamp(40px,5.6vw,84px);line-height:0.9;font-weight:900;font-stretch:125%;letter-spacing:-0.03em;text-transform:uppercase">Ads, sheets<br>&amp; catalogues.</h2>
+    </div>
+    <p style="margin:0;max-width:420px;font-size:17px;line-height:1.55;color:#a3a6b0;text-wrap:pretty">Product sheets, seasonal catalogues, trade offers and campaign artwork for print and e-marketing.</p>
+  </div>
+  <div style="columns:3 300px;column-gap:20px">
+    <sc-for list="{{ prints }}" as="p" hint-placeholder-count="6">
+      <figure data-reveal="1" onClick="{{ p.open }}" style="margin:0 0 20px;break-inside:avoid;cursor:zoom-in;position:relative;overflow:hidden;background:#16171a;border:1px solid rgba(242,243,245,0.08)">
+        <img src="{{ p.src }}" alt="{{ p.title }}" style="width:100%;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)">
+        <figcaption style="padding:12px 14px;display:flex;justify-content:space-between;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;border-top:1px dashed rgba(242,243,245,0.18)">
+          <span>{{ p.title }}</span><span style="color:#8d909b">{{ p.tag }}</span>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<section id="about" data-screen-label="About" style="background:#121316;padding:110px 28px">
+  <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:56px;align-items:start">
+    <div data-reveal="1" style="position:relative;padding:22px;max-width:480px">
+      <div style="position:absolute;left:0;top:0;width:26px;height:26px;border-left:1px solid #f2f3f5;border-top:1px solid #f2f3f5"></div>
+      <div style="position:absolute;right:0;top:0;width:26px;height:26px;border-right:1px solid #f2f3f5;border-top:1px solid #f2f3f5"></div>
+      <div style="position:absolute;left:0;bottom:0;width:26px;height:26px;border-left:1px solid #f2f3f5;border-bottom:1px solid #f2f3f5"></div>
+      <div style="position:absolute;right:0;bottom:0;width:26px;height:26px;border-right:1px solid #f2f3f5;border-bottom:1px solid #f2f3f5"></div>
+      <img src="img/portrait.jpg" alt="Khader Mohideen" style="width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;filter:saturate(0.92)">
+      <div style="position:absolute;right:-14px;bottom:44px;background:#3d63ff;color:#fff;padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;line-height:1.5;transform:rotate(-3deg)">Based in Dubai<br>Employment visa · UAE licence</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:36px">
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#3d63ff;text-transform:uppercase">05 / About</div>
+        <h2 style="margin:0;font-size:clamp(34px,4.2vw,60px);line-height:0.95;font-weight:900;font-stretch:125%;letter-spacing:-0.03em;text-transform:uppercase">Concept to final artwork.</h2>
+        <p style="margin:0;font-size:18px;line-height:1.6;max-width:620px;text-wrap:pretty">Senior graphic designer with 10+ years delivering visual communication across print and digital in the UAE and India. I translate brand requirements into packaging, corporate gifts, advertisements, brochures and digital assets — and take them all the way to production-ready files.</p>
+      </div>
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ skills }}" as="s" hint-placeholder-count="10">
+          <span style="border:1px solid rgba(242,243,245,0.3);padding:8px 13px;font-size:13px;font-weight:500">{{ s }}</span>
+        </sc-for>
+      </div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px;border-top:1px solid rgba(242,243,245,0.2);padding-top:24px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#8d909b;text-transform:uppercase">Tools</div>
+          <div style="font-size:15px;line-height:1.55">Photoshop, Illustrator, InDesign, CorelDRAW, Premiere Pro &amp; After Effects (basic), Dreamweaver</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#8d909b;text-transform:uppercase">Web</div>
+          <div style="font-size:15px;line-height:1.55">HTML, CSS, ASP.NET, digital content uploads</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#8d909b;text-transform:uppercase">Languages</div>
+          <div style="font-size:15px;line-height:1.55">English, Tamil, Hindi, Urdu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1320px;margin:90px auto 0;display:flex;flex-direction:column;gap:20px">
+    <div data-reveal="1" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid #f2f3f5;padding-bottom:14px">
+      <h3 style="margin:0;font-size:clamp(26px,3vw,40px);font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:-0.02em">Spec sheet: experience</h3>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#a3a6b0;text-transform:uppercase;letter-spacing:0.06em">BCA · Diploma in Graphic Designing · DCA · ASP.NET</span>
+    </div>
+    <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="5">
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px 24px;padding:20px 0;border-bottom:1px dashed rgba(242,243,245,0.3);align-items:baseline">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#c6ff00">{{ j.when }}</span>
+        <span style="font-weight:800;font-stretch:115%;font-size:20px;text-transform:uppercase">{{ j.company }}</span>
+        <span style="font-size:15px">{{ j.role }}</span>
+        <span style="font-size:15px;color:#a3a6b0">{{ j.where }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="cv" data-screen-label="CV" style="max-width:1320px;margin:0 auto;padding:110px 28px;display:flex;flex-direction:column;gap:44px">
+  <div data-reveal="1" style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#3d63ff;text-transform:uppercase">06 / Curriculum vitae</div>
+      <h2 style="margin:0;font-size:clamp(40px,5.6vw,84px);line-height:0.9;font-weight:900;font-stretch:125%;letter-spacing:-0.03em;text-transform:uppercase">The full<br>spec sheet.</h2>
+    </div>
+    <a href="cv/Khader-Mohideen-CV.pdf" download="Khader-Mohideen-CV.pdf" style="background:#c6ff00;color:#0b0b0d;padding:16px 24px;font-weight:700;font-size:15px;transition:transform .25s" style-hover="transform:translateY(-3px);color:#0b0b0d">Download CV (PDF) ↓</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px">
+    <figure data-reveal="1" onClick="{{ openCv1 }}" style="margin:0;cursor:zoom-in;background:#fff;padding:10px;transform:rotate(-1.2deg);box-shadow:0 30px 60px -20px rgba(18,54,255,0.55);transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:rotate(0deg) translateY(-8px)">
+      <img src="img/cv-1.png" alt="CV page 1" style="width:100%;display:block">
+    </figure>
+    <figure data-reveal="1" onClick="{{ openCv2 }}" style="margin:0;cursor:zoom-in;background:#fff;padding:10px;transform:rotate(1.2deg);box-shadow:0 30px 60px -20px rgba(198,255,0,0.35);transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:rotate(0deg) translateY(-8px)">
+      <img src="img/cv-2.png" alt="CV page 2" style="width:100%;display:block">
+    </figure>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="Contact" style="background:#1236ff;color:#ffffff;padding:120px 28px 40px;position:relative;overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:22px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#c6ff00;text-transform:uppercase">07 / Contact</div>
+      <h2 style="margin:0;font-size:clamp(48px,8vw,128px);line-height:0.86;font-weight:900;font-stretch:125%;letter-spacing:-0.035em;text-transform:uppercase">Let's make<br>something worth<br><span style="color:#c6ff00">unboxing.</span></h2>
+    </div>
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:2px">
+      <a href="mailto:khaderkm@ymail.com" style="display:flex;flex-direction:column;gap:10px;padding:28px;border:1px solid rgba(255,255,255,0.18);color:#ffffff;transition:background .3s" style-hover="background:#c6ff00;color:#0b0b0d">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Email</span>
+        <span style="font-size:clamp(20px,2vw,26px);font-weight:700">khaderkm@ymail.com</span>
+      </a>
+      <a href="tel:+971527518661" style="display:flex;flex-direction:column;gap:10px;padding:28px;border:1px solid rgba(255,255,255,0.18);color:#ffffff;transition:background .3s" style-hover="background:#c6ff00;color:#0b0b0d">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Phone / WhatsApp</span>
+        <span style="font-size:clamp(20px,2vw,26px);font-weight:700">+971 52 751 8661</span>
+      </a>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:28px;border:1px solid rgba(255,255,255,0.18)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Studio</span>
+        <span style="font-size:clamp(20px,2vw,26px);font-weight:700">Dubai, UAE</span>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8d909b;border-top:1px dashed rgba(255,255,255,0.2);padding-top:22px">
+      <span>© 2026 Khader Mohideen</span>
+      <span>Brand work shown belongs to its respective owners</span>
+      <a href="#top" style="color:#c6ff00">Back to top ↑</a>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ lb }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLb }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,19,17,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:32px;cursor:zoom-out;animation:km-fade .3s both">
+    <img src="{{ lb.src }}" alt="{{ lb.title }}" style="max-width:min(1200px,92vw);max-height:82vh;object-fit:contain;background:#fff;box-shadow:0 40px 80px rgba(0,0,0,0.5);animation:km-rise .45s cubic-bezier(.2,.7,.2,1) both">
+    <div style="display:flex;gap:20px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff">
+      <span>{{ lb.title }}</span><span style="color:#c6ff00">Close ✕</span>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroBox&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;orsted&quot;,&quot;siran&quot;,&quot;arezzo&quot;,&quot;rise&quot;,&quot;vel&quot;],&quot;default&quot;:&quot;orsted&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;3D packaging&quot;},&quot;autoSpin&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;3D packaging&quot;},&quot;spinSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:40,&quot;step&quot;:1,&quot;default&quot;:12,&quot;unit&quot;:&quot;°/s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;3D packaging&quot;}}">
+const BOXES = [
+  { id:'orsted', name:'Orsted', client:'Memorii', type:'Tuck-end carton', dims:'80 × 80 × 25 mm', img:'img/orsted.jpg', iw:1280, ih:1008, W:230, H:230, D:72,
+    front:[175,312,430,430], back:[740,312,430,430] },
+  { id:'siran', name:'Siran', client:'Giftology', type:'Tuck-end carton', dims:'92 × 68 × 98 mm', img:'img/siran.jpg', iw:1280, ih:905, W:225, H:240, D:166,
+    front:[300,335,315,335], back:[848,335,317,335] },
+  { id:'arezzo', name:'Arezzo', client:'Memorii', type:'Tuck-end carton', dims:'100 × 30 × 140 mm', img:'img/arezzo.jpg', iw:1280, ih:1157, W:200, H:280, D:60,
+    front:[675,342,428,595], back:[118,342,430,595] },
+  { id:'rise', name:'Rise', client:'Giftology', type:'Sleeve carton', dims:'235 × 132 × 35 mm', img:'img/rise.jpg', iw:1280, ih:935, W:330, H:185, D:49,
+    front:[158,485,580,323], back:[158,73,580,324], backRot:true },
+  { id:'vel', name:'Vel Sonamasuri', client:'Viswanath Agro', type:'10 kg rice bag', dims:'Front + back print', img:'img/vel-rice.jpg', iw:1280, ih:933, W:210, H:306, D:16,
+    front:[0,0,640,933], back:[640,0,640,933], side:'#6c2479' }
+];
+const clamp = (v) => Math.max(0, Math.min(1, v));
+const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+const lerp = (a,b,t) => a + (b-a)*t;
+
+class Component extends DCLogic {
+  state = { sel: 1, labFolded: true, lb: null };
+  heroRef = React.createRef();
+  labRef = React.createRef();
+
+  spec(id) { return BOXES.find(b => b.id === id) || BOXES[0]; }
+
+  componentDidMount() {
+    this.inst = {};
+    this.mountBox('hero', this.heroRef.current, this.spec(this.props.heroBox ?? 'orsted'), 700);
+    this.mountBox('lab', this.labRef.current, BOXES[this.state.sel], null);
+    let last = performance.now();
+    const loop = (t) => { const dt = Math.min(0.05, (t-last)/1000); last = t; Object.values(this.inst).forEach(i => this.frame(i, dt)); this.raf = requestAnimationFrame(loop); };
+    this.raf = requestAnimationFrame(loop);
+    const labHost = this.labRef.current;
+    if (labHost) {
+      this.labIO = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting && this.inst.lab && !this.inst.lab.started) { this.inst.lab.started = true; setTimeout(() => { if (this.inst.lab) this.inst.lab.target = this.state.labFolded ? 1 : 0; }, 350); } }); }, { threshold: 0.35 });
+      this.labIO.observe(labHost);
+    }
+    this.setupReveal();
+  }
+
+  componentWillUnmount() { cancelAnimationFrame(this.raf); this.labIO && this.labIO.disconnect(); this.revIO && this.revIO.disconnect(); }
+
+  componentDidUpdate(pp, ps) {
+    if (ps.sel !== this.state.sel) {
+      const i = this.inst.lab; const keep = { rx: i.rx, ry: i.ry };
+      this.mountBox('lab', this.labRef.current, BOXES[this.state.sel], null);
+      Object.assign(this.inst.lab, keep, { started: true });
+      setTimeout(() => { if (this.inst.lab) this.inst.lab.target = 1; }, 250);
+      if (!this.state.labFolded) this.setState({ labFolded: true });
+    }
+    if (pp.heroBox !== this.props.heroBox) this.mountBox('hero', this.heroRef.current, this.spec(this.props.heroBox ?? 'orsted'), 300);
+    this.setupReveal();
+  }
+
+  setupReveal() {
+    if (!this.revIO) {
+      this.revIO = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting) { const el = e.target; el.style.opacity = '1'; el.style.transform = 'none'; this.revIO.unobserve(el); } }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }
+    document.querySelectorAll('[data-reveal]:not([data-rv])').forEach((el, k) => {
+      el.setAttribute('data-rv', '1');
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) return;
+      el.style.opacity = '0'; el.style.transform = 'translateY(36px)';
+      el.style.transition = `opacity .9s cubic-bezier(.2,.7,.2,1) ${(k%3)*0.08}s, transform .9s cubic-bezier(.2,.7,.2,1) ${(k%3)*0.08}s`;
+      this.revIO.observe(el);
+    });
+  }
+
+  mountBox(key, host, spec, autoFoldDelay) {
+    if (!host) return;
+    const prev = host.querySelector('[data-box]'); if (prev) prev.remove();
+    const prevSh = host.querySelector('[data-shadow]'); if (prevSh) prevSh.remove();
+    const { W, H, D } = spec;
+    const mk = (w, h, css) => { const d = document.createElement('div'); Object.assign(d.style, { position:'absolute', width:w+'px', height:h+'px', transformStyle:'preserve-3d' }, css || {}); return d; };
+    const skins = [];
+    const skin = (face, w, h, rect, opts = {}) => {
+      const p = document.createElement('div');
+      Object.assign(p.style, { position:'absolute', inset:'0', backfaceVisibility:'hidden', WebkitBackfaceVisibility:'hidden', outline:'1px dashed rgba(198,255,0,1)', outlineOffset:'-0.5px' });
+      if (rect) {
+        const sx = w / rect[2], sy = h / rect[3];
+        Object.assign(p.style, { backgroundImage:`url("${spec.img}")`, backgroundSize:`${spec.iw*sx}px ${spec.ih*sy}px`, backgroundPosition:`${-rect[0]*sx}px ${-rect[1]*sy}px`, backgroundRepeat:'no-repeat' });
+        if (opts.rot) p.style.transform = 'rotate(180deg)';
+      } else {
+        p.style.background = spec.side || opts.tone || '#f4f1ea';
+        if (!spec.side) p.style.backgroundImage = 'linear-gradient(135deg,rgba(0,0,0,0.0),rgba(0,0,0,0.05))';
+      }
+      const inside = document.createElement('div');
+      Object.assign(inside.style, { position:'absolute', inset:'0', transform:'rotateY(180deg)', backfaceVisibility:'hidden', WebkitBackfaceVisibility:'hidden', background:'#c8a274', backgroundImage:'repeating-linear-gradient(90deg,rgba(90,60,30,0.06) 0 2px,transparent 2px 7px)' });
+      face.appendChild(inside); face.appendChild(p); skins.push(p);
+    };
+    const root = mk(0, 0, { left:'50%', top:'50%' }); root.setAttribute('data-box', '1');
+    const front = mk(W, H, { left:(-W/2)+'px', top:(-H/2)+'px' });
+    const right = mk(D, H, { left:W+'px', top:'0', transformOrigin:'0 50%' });
+    const back = mk(W, H, { left:D+'px', top:'0', transformOrigin:'0 50%' });
+    const left = mk(D, H, { left:W+'px', top:'0', transformOrigin:'0 50%' });
+    const top = mk(W, D, { left:'0', top:(-D)+'px', transformOrigin:'50% 100%' });
+    const bottom = mk(W, D, { left:'0', top:H+'px', transformOrigin:'50% 0' });
+    skin(front, W, H, spec.front);
+    skin(right, D, H, null, { tone:'#e9e4da' });
+    skin(back, W, H, spec.back, { rot: spec.backRot });
+    skin(left, D, H, null, { tone:'#e9e4da' });
+    skin(top, W, D, null, { tone:'#f7f4ee' });
+    skin(bottom, W, D, null, { tone:'#dcd6ca' });
+    left && back.appendChild(left); right.appendChild(back); front.appendChild(right); front.appendChild(top); front.appendChild(bottom); root.appendChild(front);
+    const shadow = document.createElement('div'); shadow.setAttribute('data-shadow', '1');
+    Object.assign(shadow.style, { position:'absolute', left:'50%', bottom:'9%', width:'52%', height:'34px', transform:'translateX(-50%)', borderRadius:'50%', background:'radial-gradient(closest-side,rgba(47,91,255,0.6),transparent)', filter:'blur(6px)', opacity:'0', pointerEvents:'none' });
+    host.appendChild(shadow); host.appendChild(root);
+    const old = this.inst[key];
+    const inst = { key, host, spec, root, front, right, back, left, top, bottom, skins, shadow, p:0, target:0, rx:-16, ry:-32, drag:null, started:false };
+    this.inst[key] = inst;
+    if (!host.__kmBound) {
+      host.__kmBound = true;
+      host.addEventListener('pointerdown', (e) => { const i = this.inst[key]; i.drag = { x:e.clientX, y:e.clientY, rx:i.rx, ry:i.ry }; host.style.cursor = 'grabbing'; host.setPointerCapture(e.pointerId); });
+      host.addEventListener('pointermove', (e) => { const i = this.inst[key]; if (!i.drag) return; i.ry = i.drag.ry + (e.clientX - i.drag.x) * 0.45; i.rx = Math.max(-70, Math.min(70, i.drag.rx - (e.clientY - i.drag.y) * 0.35)); });
+      const up = () => { const i = this.inst[key]; i.drag = null; host.style.cursor = 'grab'; };
+      host.addEventListener('pointerup', up); host.addEventListener('pointercancel', up);
+    }
+    if (autoFoldDelay != null) setTimeout(() => { if (this.inst[key] === inst) { inst.target = 1; inst.started = true; } }, autoFoldDelay);
+  }
+
+  frame(i, dt) {
+    const dir = Math.sign(i.target - i.p);
+    if (dir) i.p = dir > 0 ? Math.min(i.target, i.p + dt/1.8) : Math.max(i.target, i.p - dt/1.8);
+    const f = ease(i.p);
+    const { W, H, D } = i.spec;
+    const spin = this.props.autoSpin ?? true;
+    const speed = this.props.spinSpeed ?? 12;
+    if (!i.drag && spin && i.p > 0.98) i.ry += speed * dt;
+    const hw = i.host.clientWidth, hh = i.host.clientHeight;
+    const flatS = Math.min(1, (hw - 40) / (2*W + 2*D), (hh - 40) / (H + 2*D));
+    const foldS = Math.min(1.25, (hh * 0.6) / H, (hw * 0.55) / (W + D * 0.6));
+    const s = lerp(flatS, foldS, f);
+    const rx = lerp(0, i.rx, f), ry = lerp(0, i.ry, f);
+    i.root.style.transform = `scale(${s}) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    i.front.style.transform = `translateX(${-(W/2 + D) * (1 - f)}px) translateZ(${D/2 * f}px)`;
+    const a1 = ease(clamp(i.p / 0.6)) * 90, a2 = ease(clamp((i.p - 0.15) / 0.6)) * 90, a3 = ease(clamp((i.p - 0.3) / 0.6)) * 90, a4 = ease(clamp((i.p - 0.45) / 0.55)) * 90;
+    i.right.style.transform = `rotateY(${a1}deg)`;
+    i.back.style.transform = `rotateY(${a2}deg)`;
+    i.left.style.transform = `rotateY(${a3}deg)`;
+    i.top.style.transform = `rotateX(${a4}deg)`;
+    i.bottom.style.transform = `rotateX(${-a4}deg)`;
+    const oc = `rgba(198,255,0,${(1 - f).toFixed(3)})`;
+    if (i._oc !== oc) { i._oc = oc; i.skins.forEach(k => k.style.outlineColor = oc); }
+    i.shadow.style.opacity = (f * 0.9).toFixed(3);
+  }
+
+  renderVals() {
+    const open = (src, title) => () => this.setState({ lb: { src, title } });
+    const hero = this.spec(this.props.heroBox ?? 'orsted');
+    const gifts = [
+      ['img/mashreq-box-2.jpg','Mashreq — welcome kit','Rigid box + insert'],
+      ['img/du-box.jpg','du — drinkware set','Magnetic box'],
+      ['img/mashreq-box.jpg','Mashreq — gift set','Lift-lid box'],
+      ['img/du-mailer.jpg','du — mailer set','Mailer box'],
+      ['img/karak-box.jpg','Just Chill — Karak','Display carton'],
+      ['img/tag.jpg','Santhome Tag','Dieline']
+    ].map(([src,title,tag]) => ({ src, title, tag, open: open(src, title) }));
+    const merch = [
+      ['img/tiktok-tee.jpg','TikTok — tee','Apparel'],
+      ['img/tiktok-bag.jpg','TikTok — kit bag','Bags'],
+      ['img/tiktok-flipflops.jpg','TikTok — flip-flops','Footwear'],
+      ['img/tiktok-socks.jpg','TikTok — socks','Apparel'],
+      ['img/tiktok-roundbox.jpg','TikTok — round tin','Gift pack'],
+      ['img/etihad-pouch.jpg','Etihad 20th — pouch','Travel'],
+      ['img/etihad-pillow.jpg','Etihad 20th — sleep kit','Travel'],
+      ['img/mashreq-bottles.jpg','Mashreq — bottle','Drinkware'],
+      ['img/mashreq-notebook.jpg','Mashreq — notebook & pen','Stationery']
+    ].map(([src,title,tag]) => ({ src, title, tag, open: open(src, title) }));
+    const prints = [
+      ['img/alhafa.jpg','Al Hafa — Open. Fry. Serve.','Campaign'],
+      ['img/corinto.jpg','Corinto','Product sheet'],
+      ['img/magcharge.jpg','MagCharge','Explainer'],
+      ['img/eid.jpg','Corporate gifts for Eid','Catalogue'],
+      ['img/celle.jpg','Celle tumbler','Product sheet'],
+      ['img/impact-cap.jpg','Impact AWARE cap','Product sheet'],
+      ['img/happiness.jpg','Happiness Day giveaways','Catalogue'],
+      ['img/eslov.jpg','Eslov speaker','Product sheet'],
+      ['img/dermoviva.jpg','DermoViva','Trade offer'],
+      ['img/gym.jpg','Bring the gym home','Catalogue'],
+      ['img/moleskine-tumi.jpg','Moleskine × Tumi','Web banner']
+    ].map(([src,title,tag]) => ({ src, title, tag, open: open(src, title) }));
+    const brands = ['Mashreq','Etihad Airways','du','TikTok','Al Hafa','Memorii','Giftology','Santhome','Just Chill','DermoViva'];
+    return {
+      heroRef: this.heroRef, labRef: this.labRef,
+      heroSpec: hero,
+      marquee: [...brands, ...brands],
+      labItems: BOXES.map((b, k) => {
+        const on = k === this.state.sel;
+        return { ...b, num: String(k+1).padStart(2,'0'), bg: on ? '#c6ff00' : 'rgba(255,255,255,0.04)', fg: on ? '#0b0b0d' : '#ffffff', bar: on ? '#0b0b0d' : 'transparent', select: () => this.setState({ sel: k }) };
+      }),
+      foldLabel: this.state.labFolded ? 'Unfold to dieline' : 'Fold into box',
+      toggleFold: () => { const f = !this.state.labFolded; this.setState({ labFolded: f }); if (this.inst && this.inst.lab) { this.inst.lab.target = f ? 1 : 0; this.inst.lab.started = true; } },
+      openDieline: () => { const b = BOXES[this.state.sel]; this.setState({ lb: { src: b.img, title: b.name + ' — original artwork' } }); },
+      gifts, merch, prints,
+      skills: ['Packaging & dielines','Corporate branding','Brand identity','Logo design','Print design','Digital design','Marketing collateral','E-marketing graphics','Advertising','Brochures & flyers','Layout design','Digital asset management'],
+      jobs: [
+        { when:'Oct 2016 — Present', company:'Jasani LLC', role:'Graphic Designer (Lead)', where:'Dubai, UAE' },
+        { when:'Aug 2015 — Jul 2016', company:'Dream Creators', role:'Graphic Designer', where:'Chennai, India' },
+        { when:'May 2013 — Jun 2015', company:'Golden Eye Gifts LLC', role:'Graphic Designer', where:'Dubai, UAE' },
+        { when:'Dec 2010 — Jan 2013', company:'Dream Creators', role:'Graphic Designer', where:'Chennai, India' },
+        { when:'Mar 2010 — Aug 2010', company:'Vetri Software India', role:'Data Entry Operator', where:'Chennai, India' }
+      ],
+      lb: this.state.lb,
+      closeLb: () => this.setState({ lb: null }),
+      openCv1: open('img/cv-1.png','CV — page 1'),
+      openCv2: open('img/cv-2.png','CV — page 2')
+    };
+  }
+}
+</script>
+</body>
+</html>
